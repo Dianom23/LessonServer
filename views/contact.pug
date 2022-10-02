@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="style.css")
+    body 
+        nav.navbar 
+            a(href="/") Home 
+            a(href="/add-contact") Add Contact
+        main 
+            h1.title Контакты
+            if(contacts.length != 0)
+                p.desc Список участников команды
+                .contacts-list
+                    each contact in contacts
+                        h1.nameTitle= contact.name
+                        p #{contact.age} лет
+                        p Описание #{contact.desc}
+                        hr
+
+            else 
+                p.desc Список участников команды пуст
