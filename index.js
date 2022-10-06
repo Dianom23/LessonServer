@@ -17,7 +17,7 @@ const start = async() =>{
         await mongoose.connect(db)
             .then(res => console.log('База данных подключена'))
             .catch(error => console.log(error))
-        app.listen(PORT, ()=>{
+        app.listen(process.env.PORT || PORT, ()=>{
             console.log('Сервер запустился')
         })
     }
