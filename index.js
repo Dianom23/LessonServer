@@ -5,7 +5,7 @@ const Contacts = require('./contacts-model')
 require('dotenv').config()
 
 const app = express()
-const port = 3000
+const PORT = 3000
 const db = process.env.DB
 
 
@@ -19,7 +19,7 @@ const start = async() =>{
         await mongoose.connect(db)
             .then(res => console.log('База данных подключена'))
             .catch(error => console.log(error))
-        app.listen(port, ()=>{
+        app.listen(process.env.PORT || PORT, ()=>{
             console.log('Сервер запустился')
         })
     }
